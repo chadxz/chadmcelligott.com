@@ -3,3 +3,4 @@ paginate: 10
 markdown: redcarpet
 pygments: true
 permalink: /content/:year/:title.html
+exclude: ['README.md', 's3_website.yml']
