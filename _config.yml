@@ -1,0 +1,5 @@
+name: Chad's Website
+paginate: 10
+markdown: redcarpet
+pygments: true
+permalink: /content/:year/:title.html
