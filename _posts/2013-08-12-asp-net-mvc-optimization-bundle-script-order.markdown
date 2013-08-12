@@ -38,6 +38,7 @@ To take complete control over the ordering of the scripts or styles in the bundl
         }
     }
 ```
+Once you have cleared the `bundles.FileSetOrderList` property, the order that you add the files to your bundle will be the order they are included in your page (when `<compilation debug="true">` in your web.config) or the order they are included in the minified and concatenated file (in the case of `debug="false"`)
 
 Thanks to [Steve Fenton][2] on stackoverflow for his insightful explanation of this process.
 [1]: http://weblogs.asp.net/imranbaloch/archive/2012/09/30/hidden-options-of-asp-net-bundling-and-minification.aspx
