@@ -39,4 +39,6 @@ To take complete control over the ordering of the scripts or styles in the bundl
     }
 ```
 
-[1] http://weblogs.asp.net/imranbaloch/archive/2012/09/30/hidden-options-of-asp-net-bundling-and-minification.aspx
+Thanks to [Steve Fenton][2] on stackoverflow for his insightful explanation of this process.
+[1]: http://weblogs.asp.net/imranbaloch/archive/2012/09/30/hidden-options-of-asp-net-bundling-and-minification.aspx
+[2]: http://stackoverflow.com/questions/13130833/how-do-i-configure-mvcs-style-bundling-order
