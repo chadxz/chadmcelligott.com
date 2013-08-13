@@ -5,7 +5,6 @@ title: "Chad's Website"
 {% assign postCount = site.posts | size %}
 
 {% if postCount > 0 %}
-    <p>{{ site.posts | size }}</p>
     <ul class="posts">
     {% for post in site.posts %}
         <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
