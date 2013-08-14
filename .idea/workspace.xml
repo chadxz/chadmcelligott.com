@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d873f608-e4e1-457a-b178-d87524db669b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/vendor/bootstrap-3.0.0.min.css" afterPath="$PROJECT_DIR$/css/vendor/bootstrap-3.0.0.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/vendor/bootstrap-3.0.0.min.js" afterPath="$PROJECT_DIR$/js/vendor/bootstrap-3.0.0.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_layouts/default.html" afterPath="$PROJECT_DIR$/_layouts/default.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/syntax.css" afterPath="$PROJECT_DIR$/css/syntax.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_posts/2013-08-12-asp-net-mvc-optimization-bundle-script-order.markdown" afterPath="$PROJECT_DIR$/_posts/2013-08-12-asp-net-mvc-optimization-bundle-script-order.markdown" />
     </list>
     <ignored path="chadmcelligott.com.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -41,7 +37,7 @@
       <file leaf-file-name="default.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/_layouts/default.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="50" column="80" selection-start="1361" selection-end="1361" vertical-scroll-proportion="0.54317546" vertical-offset="360" max-vertical-offset="1740">
+            <state line="50" column="80" selection-start="1361" selection-end="1361" vertical-scroll-proportion="0.5298913" vertical-offset="360" max-vertical-offset="1740">
               <folding />
             </state>
           </provider>
@@ -77,14 +73,15 @@
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/css/syntax.css" />
         <option value="$PROJECT_DIR$/_layouts/default.html" />
+        <option value="$PROJECT_DIR$/_posts/2013-08-12-asp-net-mvc-optimization-bundle-script-order.markdown" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="690" />
+    <option name="x" value="192" />
     <option name="y" value="37" />
-    <option name="width" value="932" />
-    <option name="height" value="901" />
+    <option name="width" value="1327" />
+    <option name="height" value="906" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -158,6 +155,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="chadmcelligott.com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="chadmcelligott.com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="_posts" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -246,13 +257,13 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="690" y="37" width="932" height="901" extended-state="0" />
+    <frame x="192" y="37" width="1327" height="906" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2495238" sideWeight="0.7912371" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22662266" sideWeight="0.79950494" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15797547" sideWeight="0.79950494" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30140486" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -328,11 +339,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/css/vendor/font-awesome-3.2.1.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="58" selection-start="4561" selection-end="4561" vertical-scroll-proportion="0.0" vertical-offset="420" max-vertical-offset="6135" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="23" column="49" selection-start="825" selection-end="825" vertical-scroll-proportion="0.0" vertical-offset="555" max-vertical-offset="1125">
@@ -425,9 +431,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2013-08-12-asp-net-mvc-optimization-bundle-script-order.markdown">
+      <provider editor-type-id="MarkdownPreviewEditor">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="440" selection-start="570" selection-end="570" vertical-scroll-proportion="0.1875" vertical-offset="0" max-vertical-offset="780">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/_layouts/default.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="80" selection-start="1361" selection-end="1361" vertical-scroll-proportion="0.54317546" vertical-offset="360" max-vertical-offset="1740">
+        <state line="50" column="80" selection-start="1361" selection-end="1361" vertical-scroll-proportion="0.5298913" vertical-offset="360" max-vertical-offset="1740">
           <folding />
         </state>
       </provider>

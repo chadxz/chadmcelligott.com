@@ -7,7 +7,7 @@ tags:
  - c#
 ---
 
-I have been working on a responsive design project in ASP.NET MVC 4 using the "Microsoft ASP.NET Web Optimization Framework" (nuget id: [Microsoft.AspNet.Web.Optimization][1]), which introduces the ability to create bundles of scripts and styles.  These bundles can then be included in my view using syntax like `@Scripts.Render("~/bundles/header-scripts")`.  This can be nice if you have many scripts to include, but the best benefit is it's ability to concatenate, minify, and name your scripts/styles.  Concatenation and minification are nice to improve the performance of the site, and automatic name management is nice because it will force an updated script to be re-downloaded instead of served from the browser cache.
+I have been working on a responsive design project in ASP.NET MVC 4 using the "Microsoft ASP.NET Web Optimization Framework" (nuget id: [Microsoft.AspNet.Web.Optimization][1]), which introduces the ability to create bundles of scripts and styles.  These bundles can then be included in my view using syntax like `@Scripts.Render("~/bundles/header-scripts")`.  This can be nice if you have many scripts to include, but the best benefit is its ability to concatenate, minify, and name your scripts/styles.  Concatenation and minification are nice to improve the performance of the site, and automatic name management is nice because it will force an updated script to be re-downloaded instead of served from the browser cache.
 
 By default, the bundling framework has some built-in magic that decides how best to order the scripts and styles included.  Imran Baloch has a [blog post][2] providing details of the script/stylesheet names that take precedence over others by default.
 
