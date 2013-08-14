@@ -8,53 +8,69 @@
     <link href="/css/vendor/bootstrap-3.0.0.min.css" rel="stylesheet" />
     <link href="/css/vendor/font-awesome-3.2.1.min.css" rel="stylesheet" />
     <link href="/css/syntax.css" rel="stylesheet" />
-    <link href='http://fonts.googleapis.com/css?family=Alegreya:400italic,700italic,400,700' rel='stylesheet' />
+    <link href="http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic" rel="stylesheet" />
     <script src="/js/vendor/modernizr-2.6.2.min.js"></script>
 
     <style>
-        p, h1, h2, h3, h4, a, span, code {
-            font-family: "Alegreya", serif;
+        p, h1, h2, h3, h4, a {
+            font-family: "Droid Serif", serif;
         }
+
+        p {
+            font-size: 1.125em;
+        }
+
         .page-header {
             border-bottom: 0;
         }
+
         .page-header small {
             display: inline-block;
             margin-left: 5px;
         }
+
         .author-links li {
             display: inline-block;
             margin: 0 10px;
         }
+
         a:link, a:active, a:hover {
             color: #3CA53C;
         }
+
         a:visited {
             color: #097209;
         }
+
     </style>
 
 </head>
 <body>
 <div class="container">
-    <header class="container">
-        <div class="text-center page-header">
-            <h1>{{ site.name }}<small id="saying">Where cats go to meow</small></h1>
-            <ul class="list-unstyled author-links">
-                <li><i class="icon-github icon-large"></i> <a href="https://github.com/chadxz">chadxz</a></li>
-                <li><i class="icon-twitter icon-large"></i> <a href="https://twitter.com/chadmcelligott">@chadmcelligott</a></li>
-                <li><i class="icon-linkedin icon-large"></i> <a href="http://www.linkedin.com/in/chadmcelligott/">Chad McElligott</a></li>
-            </ul>
+    <div class="row">
+        <div class="col-xs-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
+            <header>
+                <div class="text-center page-header">
+                    <h1>{{ site.name }}<small id="saying">Where cats go to meow</small></h1>
+                    <ul class="list-unstyled author-links">
+                        <li><i class="icon-github icon-large"></i> <a href="https://github.com/chadxz">chadxz</a></li>
+                        <li><i class="icon-twitter icon-large"></i> <a href="https://twitter.com/chadmcelligott">@chadmcelligott</a></li>
+                        <li><i class="icon-linkedin icon-large"></i> <a href="http://www.linkedin.com/in/chadmcelligott/">Chad McElligott</a></li>
+                    </ul>
+                </div>
+            </header>
+            <section id="content">
+                {{ content }}
+            </section>
         </div>
-    </header>
-    <section id="content">
-        {{ content }}
-    </section>
+    </div>
 </div>
 
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="/js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/3.0.0-rc1/js/bootstrap.min.js"></script>
+<script>$.fn.modal || document.write('<script src="/Content/Scripts/Vendor/bootstrap-3.0.0.min.js"><\/script>')</script>
 
 <script type="text/javascript">
     var _gaq = _gaq || [];
