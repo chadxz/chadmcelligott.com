@@ -1,0 +1,42 @@
+p, h1, h2, h3, h4, a {
+    font-family: "Droid Serif", serif;
+}
+
+p {
+    font-size: 1.125em;
+}
+
+.page-header {
+    border-bottom: 0;
+}
+
+.page-header small {
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.author-links li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.author-links a:link,
+.author-links a:active,
+.author-links a:visited,
+.author-links a:hover
+{
+    color: #333;
+    text-decoration: none;
+}
+
+.author-links .label {
+    display: none;
+}
+
+a:link, a:active, a:hover {
+    color: #3CA53C;
+}
+
+a:visited {
+    color: #097209;
+}
