@@ -6,11 +6,21 @@ p {
     font-size: 1.125em;
 }
 
-.page-header {
+
+.page-title a:link,
+.page-title a:active,
+.page-title a:visited,
+.page-title a:hover
+{
+    color: #333;
+    text-decoration: none;
+}
+.page-footer {
     border-bottom: 0;
+    margin-bottom: 20px;
 }
 
-.page-header small {
+.page-footer small {
     display: inline-block;
     margin-left: 5px;
 }
@@ -39,4 +49,14 @@ a:link, a:active, a:hover {
 
 a:visited {
     color: #097209;
+}
+
+small abbr {
+    font-style: italic;
+    color: #949494;
+}
+
+abbr[title] {
+    cursor: auto;
+    border-bottom: 0;
 }

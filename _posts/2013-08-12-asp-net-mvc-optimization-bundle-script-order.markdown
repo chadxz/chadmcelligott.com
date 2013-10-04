@@ -14,29 +14,29 @@ By default, the bundling framework has some built-in magic that decides how best
 To take complete control over the ordering of the scripts or styles in the bundles that you create, simply put `bundles.FileSetOrderList.Clear();` at the top of your RegisterBundles function, i.e.
 
 ```c#
-    public class BundleConfig
+public class BundleConfig
+{
+    public static void RegisterBundles(BundleCollection bundles)
     {
-        public static void RegisterBundles(BundleCollection bundles)
-        {
-            // remove built-in preferential ordering
-            bundles.FileSetOrderList.Clear();
+        // remove built-in preferential ordering
+        bundles.FileSetOrderList.Clear();
 
-            // javascript to be included in the header
-            bundles.Add(new ScriptBundle("~/bundles/header-scripts").Include(     
-                "~/Content/Scripts/mysite.js",
-                "~/Content/Scripts/Vendor/modernizr-{version}.js"));
+        // javascript to be included in the header
+        bundles.Add(new ScriptBundle("~/bundles/header-scripts")
+            .Include("~/Content/Scripts/mysite.js")
+            .Include("~/Content/Scripts/Vendor/modernizr-{version}.js"));
 
-            // javascript to be included before the </body> tag
-            bundles.Add(new ScriptBundle("~/bundles/footer-scripts").Include(
-                "~/Content/Scripts/Vendor/jquery-{version}.js",
-                "~/Content/Scripts/Vendor/bootstrap-{version}.js"));
+        // javascript to be included before the </body> tag
+        bundles.Add(new ScriptBundle("~/bundles/footer-scripts")
+            .Include("~/Content/Scripts/Vendor/jquery-{version}.js")
+            .Include("~/Content/Scripts/Vendor/bootstrap-{version}.js"));
 
-            // css
-            bundles.Add(new StyleBundle("~/bundles/css").Include(
-                "~/Content/Styles/Vendor/bootstrap-{version}.css",
-                "~/Content/Styles/mysite.css"));
-        }
+        // css
+        bundles.Add(new StyleBundle("~/bundles/css")
+            .Include("~/Content/Styles/Vendor/bootstrap-{version}.css")
+            .Include("~/Content/Styles/mysite.css"));
     }
+}
 ```
 Once you have cleared the `bundles.FileSetOrderList` property, the order that you add the files to your bundle will be the order they are included in your page (when `<compilation debug="true">` in your web.config) or the order they are included in the minified and concatenated file (in the case of `debug="false"`)
 

@@ -3,7 +3,7 @@ layout: default
 ---
 
 <h2>{{ page.title }}</h2>
-<p class="meta">{{ page.date | date_to_string }}</p>
+<p class="meta">posted <abbr class="js-relative-date" data-raw-datetime="{{page.date}}" title="{{ page.date | date: '%B %-d, %Y @ %I:%M %-P' }}">{{ page.date | date: '%B %-d, %Y @ %I:%M %-P' }}</abbr></p>
 
 <div class="post">
 {{ content }}

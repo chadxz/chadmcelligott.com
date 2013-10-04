@@ -17,27 +17,38 @@
     <div class="row">
         <div class="col-xs-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
             <header>
-                <div class="text-center page-header">
-                    <h1>{{ site.name }}<small id="saying">Where cats go to meow</small></h1>
-                    <ul class="list-unstyled author-links">
-                        <li><i class="icon-github icon-large"></i> <a href="https://github.com/chadxz">chadxz</a></li>
-                        <li><i class="icon-twitter icon-large"></i> <a href="https://twitter.com/chadmcelligott">@chadmcelligott</a></li>
-                        <li><i class="icon-linkedin icon-large"></i> <a href="http://www.linkedin.com/in/chadmcelligott/">Chad McElligott</a></li>
-                    </ul>
-                </div>
+                <h3 class="page-title"><a href="/">Chad's Website</a></h3>
             </header>
             <section id="content">
                 {{ content }}
             </section>
+            <hr />
+            <footer>
+                <div class="text-center page-footer">
+                    <ul class="list-unstyled author-links">
+                        <li><a href="https://github.com/chadxz"><span class="icon-github icon-large"></span><span class="hidden">chadxz on github</span></a></li>
+                        <li><a href="https://twitter.com/chadmcelligott"><span class="icon-twitter icon-large"></span><span class="hidden">@chadmcelligott on twitter</span></a></li>
+                        <li><a href="http://www.linkedin.com/in/chadmcelligott/"><span class="icon-linkedin icon-large"></span><span class="hidden">Chad McElligott on LinkedIn</span></a></li>
+                    </ul>
+                </div>
+            </footer>
         </div>
     </div>
 </div>
 
-
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="/js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
-<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/3.0.0-rc1/js/bootstrap.min.js"></script>
-<script>$.fn.modal || document.write('<script src="/Content/Scripts/Vendor/bootstrap-3.0.0.min.js"><\/script>')</script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script>$.fn.modal || document.write('<script src="/js/vendor/bootstrap-3.0.0.min.js"><\/script>')</script>
+<script src="/js/vendor/moment-2.2.1.min.js"></script>
+
+<script>
+    $('abbr.js-relative-date').each(function () {
+        var el = $(this);
+        var relativeDate = moment(el.data('raw-datetime')).fromNow();
+        el.text(relativeDate);
+    });
+</script>
 
 <script type="text/javascript">
     var _gaq = _gaq || [];
@@ -50,28 +61,6 @@
         ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
         var s = document.getElementsByTagName('script')[0];
         s.parentNode.insertBefore(ga, s);
-    })();
-</script>
-
-<script>
-    ;(function() {
-        function chooseSaying() {
-            var sayings =
-                    ["I wear my sunglasses at night",
-                        "An afternoon delight",
-                        "Where bees earn their knees",
-                        "The end of the rainbow",
-                        "Sleeptalking is not a crime",
-                        "Where cats go to meow",
-                        "Look around and smile",
-                        "See the forest and the trees",
-                        "Do you hear what I hear?"];
-
-            var randIdx = Math.floor(Math.random() * sayings.length);
-            return sayings[randIdx];
-        }
-
-        $("small#saying").text(chooseSaying());
     })();
 </script>
 </body>
