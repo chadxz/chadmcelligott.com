@@ -43,10 +43,12 @@
 <script src="/js/vendor/moment-2.2.1.min.js"></script>
 
 <script>
-    $('abbr.js-relative-date').each(function () {
-        var el = $(this);
-        var relativeDate = moment(el.data('raw-datetime')).fromNow();
-        el.text(relativeDate);
+    $('document').ready(function () {
+        $('abbr.js-relative-date').each(function () {
+            var el = $(this);
+            var relativeDate = moment(el.data('raw-datetime')).fromNow();
+            el.text(relativeDate);
+        });
     });
 </script>
 
