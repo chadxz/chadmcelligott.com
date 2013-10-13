@@ -5,4 +5,4 @@ This is my personal website that I am currently hosting using Amazon S3.  I don'
 I need to move from deploying via s3_website to using the grunt task [grunt-aws-s3][].
 
 [chadmcelligott.com]: http://chadmcelligott.com
-[aws-s3]: https://github.com/MathieuLoutre/grunt-aws-s3
+[grunt-aws-s3]: https://github.com/MathieuLoutre/grunt-aws-s3
