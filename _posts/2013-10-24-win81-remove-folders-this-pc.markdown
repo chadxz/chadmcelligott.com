@@ -6,11 +6,14 @@ tags:
  - windows
 ---
 
-When I upgrade to Windows 8.1 I noticed that there now exists a 'Folders' group in what is now called 'This PC' (formerly 'My Computer').
+When I upgraded to Windows 8.1 I noticed that there now exists a 'Folders' group in what is now called 'This PC' (formerly 'My Computer').
 
-![Folders in This PC](/assets/2013-10-24-win81-remove-folders-this-pc/Win81FoldersThisPC.png)
+<figure>
+  <img src="/assets/2013-10-24-win81-remove-folders-this-pc/Win81FoldersThisPC.png" />
+  <figcaption>'Folders' in 'This PC'. laaaaammeeee....</figcaption>
+</figure>
 
-I didn't want this change because I like for the drives to be listed at the top, and all of the displayed folders were already easily accessible from the sidebar of the explorer window.
+I didn't want this change because all of the displayed folders were already easily accessible from the sidebar of the explorer window.
 
 ###Removing the Folders
 
@@ -24,9 +27,15 @@ I have put together a set of `.reg` files for 32-bit and 64-bit systems to remov
 
 Once these changes are applied, the 'This PC' in Explorer and the Open/Save dialogs will look like this:
 
-![This PC without folders](/assets/2013-10-24-win81-remove-folders-this-pc/Win81FoldersRemovedThisPC.png)
+<figure>
+  <img src="/assets/2013-10-24-win81-remove-folders-this-pc/Win81FoldersRemovedThisPC.png" />
+  <figcaption>'This PC' in Windows Explorer, without 'Folders'</figcaption>
+</figure>
 
-![Open dialog without folders](/assets/2013-10-24-win81-remove-folders-this-pc/Win81FoldersRemovedOpenDialog.png)
+<figure>
+  <img src="/assets/2013-10-24-win81-remove-folders-this-pc/Win81FoldersRemovedOpenDialog.png" />
+  <figcaption>'This PC' in an Open dialog, without 'Folders'</figcaption>
+</figure>
 
 [HowToGeek]:http://www.howtogeek.com/168081/how-to-remove-the-folders-from-my-computer-in-windows-8.1/ 
 [download]:/assets/2013-10-24-win81-remove-folders-this-pc/Win8.1RemoveFoldersRegKeys.zip

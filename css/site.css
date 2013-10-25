@@ -6,7 +6,6 @@ p {
     font-size: 1.125em;
 }
 
-
 .page-title a:link,
 .page-title a:active,
 .page-title a:visited,
@@ -15,6 +14,7 @@ p {
     color: #333;
     text-decoration: none;
 }
+
 .page-footer {
     border-bottom: 0;
     margin-bottom: 20px;
@@ -59,4 +59,32 @@ small abbr {
 abbr[title] {
     cursor: auto;
     border-bottom: 0;
+}
+
+.contents-center {
+  text-align: center;
+}
+
+.contents-center > * {
+  margin: auto;
+}
+
+figure {
+  width: 100%;
+  margin: 15px 0;
+  text-align: center;
+}
+
+figure img {
+  display: inline-block;
+  height: auto;
+  margin: auto;
+  max-width: 100%;
+}
+
+figcaption {
+  font-size: 85%;
+  font-style: italic;
+  color: #4f4f4f;
+  margin-top: 5px;
 }
