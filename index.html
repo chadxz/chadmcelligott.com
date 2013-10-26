@@ -128,11 +128,17 @@ layout: nolayout
           // stop refreshing if no longer 'now playing' for more than 1m30s
           if (tracks[0]['@attr'] && tracks[0]['@attr'].nowplaying) {
             refreshCount = 0;
-            setTimeout(loadLastfmData(template), refreshInterval);
+
+            setTimeout(function () {
+              loadLastfmData(template)
+            }, refreshInterval);
           } else {
             if (refreshCount <= 2) {
               refreshCount++;
-              setTimeout(loadLastfmData(template), refreshInterval);
+
+              setTimeout(function () {
+                loadLastfmData(template)
+              }, refreshInterval);
             }
           }
         }
