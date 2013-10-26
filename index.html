@@ -92,7 +92,7 @@ layout: nolayout
           <a href="<%- item.artist.url %>" title="<%- item.artist.name %> on Last.fm"><%- item.artist.name %> </a> -
           <a href="<%- item.url %>" title="<%- item.name %> on Last.fm"><%- item.name %></a>
           <% if (item['@attr'] && item['@attr'].nowplaying) { %>
-            <small>&#x266C now playing &#x266C</small>
+            <small><span class="light">&#x266C</span> now playing<span class="light">&#x266C</light></small>
           <% } else { %>
             <small><abbr title="<%= moment.unix(item.date.uts).format(dateTimeFormat) %>"><%= moment.unix(item.date.uts).fromNow() %></abbr></small>
           <% } %>

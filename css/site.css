@@ -56,6 +56,10 @@ small {
     color: #949494;
 }
 
+small span.light {
+  color: #AFAFAF;
+}
+
 abbr[title] {
     cursor: auto;
     border-bottom: 0;
