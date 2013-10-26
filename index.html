@@ -86,7 +86,6 @@ layout: nolayout
 <script type="text/template" id="lastfm-template">
     <ul class="list-unstyled">
     <% _.forEach(data, function(item) { %>
-        <% console.log(item) %>
         <li>
           <% item.artist.url = lastfmMusicUrl + item.artist.url.replace(/\s/gi, '+'); %>
           <a href="<%- item.artist.url %>" title="<%- item.artist.name %> on Last.fm"><%- item.artist.name %> </a> -
@@ -123,17 +122,17 @@ layout: nolayout
               tracks = parsedData.recenttracks.track.slice(0,5),
               refreshInterval = 30000;
 
-          $('#lastfmItems').html(renderLastfmTemplate(tracks));
+          $('#lastfmItems').html(template(tracks));
 
           // if currently listening to music, periodically refresh this data.
           // stop refreshing if no longer 'now playing' for more than 1m30s
           if (tracks[0]['@attr'] && tracks[0]['@attr'].nowplaying) {
             refreshCount = 0;
-            setTimeout(loadLastfmData, refreshInterval);
+            setTimeout(loadLastfmData(template), refreshInterval);
           } else {
             if (refreshCount <= 2) {
               refreshCount++;
-              setTimeout(loadLastfmData, refreshInterval);
+              setTimeout(loadLastfmData(template), refreshInterval);
             }
           }
         }
@@ -148,10 +147,9 @@ layout: nolayout
           var parsedData = JSON.parse(data);
           var shortData = parsedData.slice(0, 5);
 
-          $('#pinboardItems').html(renderPinboardTemplate(shortData));
+          $('#pinboardItems').html(template(shortData));
         }
       });
-
     }
 
     templateOptions = {
@@ -183,7 +181,7 @@ layout: nolayout
   })();
 </script>
 
-<script type="text/javascript">
+<script>
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-42018114-1']);
   _gaq.push(['_trackPageview']);
@@ -196,5 +194,6 @@ layout: nolayout
     s.parentNode.insertBefore(ga, s);
   })();
 </script>
+
 </body>
 </html>
