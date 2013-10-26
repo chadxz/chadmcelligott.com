@@ -51,7 +51,7 @@ a:visited {
     color: #097209;
 }
 
-small abbr {
+small {
     font-style: italic;
     color: #949494;
 }
@@ -59,14 +59,6 @@ small abbr {
 abbr[title] {
     cursor: auto;
     border-bottom: 0;
-}
-
-.contents-center {
-  text-align: center;
-}
-
-.contents-center > * {
-  margin: auto;
 }
 
 figure {

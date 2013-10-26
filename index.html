@@ -50,6 +50,12 @@ layout: nolayout
                             <div id="pinboardItems" class="panel-body"></div>
                         </div>
                     </div>
+                    <div class="col-xs-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading text-center">Recent listens via Last.fm</div>
+                            <div id="lastfmItems" class="panel-body"></div>
+                        </div>
+                    </div>
                 </div>
             </section>
             <footer>
@@ -70,11 +76,30 @@ layout: nolayout
     <% _.forEach(data, function (item) { %>
         <li>
             <a href="<%- item.href %>" title="<%- item.description %>"><%- item.description %></a>
-            <small><abbr title="<%= moment(item.time).format('MMMM D, YYYY @ h:mm a') %>"><%= moment(item.time).fromNow() %></small>
+            <small><abbr title="<%= moment(item.time).format(dateTimeFormat) %>"><%= moment(item.time).fromNow() %></abbr></small>
         </li>
     <% }); %>
     </ul>
     <a href="https://pinboard.in/u:chadxz" title="Chad's pinboard">View all bookmarks at pinboard.in</a>
+</script>
+
+<script type="text/template" id="lastfm-template">
+    <ul class="list-unstyled">
+    <% _.forEach(data, function(item) { %>
+        <% console.log(item) %>
+        <li>
+          <% item.artist.url = lastfmMusicUrl + item.artist.url.replace(/\s/gi, '+'); %>
+          <a href="<%- item.artist.url %>" title="<%- item.artist.name %> on Last.fm"><%- item.artist.name %> </a> -
+          <a href="<%- item.url %>" title="<%- item.name %> on Last.fm"><%- item.name %></a>
+          <% if (item['@attr'] && item['@attr'].nowplaying) { %>
+            <small>&#x266B now playing &#x266B</small>
+          <% } else { %>
+            <small><abbr title="<%= moment.unix(item.date.uts).format(dateTimeFormat) %>"><%= moment.unix(item.date.uts).fromNow() %></abbr></small>
+          <% } %>
+        </li>
+    <% }); %>
+    </ul>
+    <a href="http://www.last.fm/user/chadxz" title="Chad's Last.fm profile">View listening profile at Last.fm</a>
 </script>
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
@@ -85,62 +110,91 @@ layout: nolayout
 <script src="/js/vendor/moment-2.2.1.min.js"></script>
 
 <script>
-    var truncate = function (str) {
-        if (typeof(str) !== typeof('')) {
-          throw new TypeError();
-        }
+  ;(function () {
+    var templateOptions, renderPinboardTemplate,
+        renderLastfmTemplate, refreshCount;
 
-        var MAXLEN = 50;
+    function loadLastfmData(template) {
+      $.ajax({
+        type: 'GET',
+        url: 'http://immense-refuge-7911.herokuapp.com/lastfm',
+        success: function (data) {
+          var parsedData = JSON.parse(data),
+              tracks = parsedData.recenttracks.track.slice(0,5),
+              refreshInterval = 30000;
 
-        str = str.trim();
-        if (str.length > MAXLEN) {
-            str = str.slice(0, MAXLEN).trim() + '...';
+          $('#lastfmItems').html(renderLastfmTemplate(tracks));
+
+          // if currently listening to music, periodically refresh this data.
+          // stop refreshing if no longer 'now playing' for more than 1m30s
+          if (tracks[0]['@attr'] && tracks[0]['@attr'].nowplaying) {
+            refreshCount = 0;
+            setTimeout(loadLastfmData, refreshInterval);
+          } else {
+            if (refreshCount <= 2) {
+              refreshCount++;
+              setTimeout(loadLastfmData, refreshInterval);
+            }
+          }
         }
-        return str;
+      });
     }
 
-    var templateOptions = {
-        variable: 'data',
-        imports: {
-            'moment': moment,
-            'truncate': truncate
+    function loadPinboardData(template) {
+      $.ajax({
+        type: 'GET',
+        url: 'http://immense-refuge-7911.herokuapp.com/pinboard',
+        success: function (data) {
+          var parsedData = JSON.parse(data);
+          var shortData = parsedData.slice(0, 5);
+
+          $('#pinboardItems').html(renderPinboardTemplate(shortData));
         }
+      });
+
+    }
+
+    templateOptions = {
+      variable: 'data',
+      imports: {
+        'moment': moment,
+        'dateTimeFormat': 'MMMM D, YYYY @ h:mm a',
+        'lastfmMusicUrl': 'http://www.last.fm/music/'
+      }
     };
 
-    var renderTemplate = _.template($('#pinboard-template').html(), null, templateOptions);
+    renderPinboardTemplate = _.template($('#pinboard-template').html(), null, templateOptions);
+    renderLastfmTemplate = _.template($('#lastfm-template').html(), null, templateOptions);
 
     $(document).ready(function () {
-        $('abbr.js-relative-date').each(function () {
-            var el = $(this);
-            var relativeDate = moment(el.data('raw-datetime')).fromNow();
-            el.text(relativeDate);
-        });
+      $('abbr.js-relative-date').each(function () {
+        var el = $(this),
+            relativeDate = moment(el.data('raw-datetime')).fromNow();
 
-        $.ajax({
-            type: 'GET',
-            url: 'http://immense-refuge-7911.herokuapp.com/pinboard',
-            success: function (data) {
-                var parsedData = JSON.parse(data);
-                var shortData = parsedData.slice(0, 5);
-                $('#pinboardItems').html(renderTemplate(shortData));
-            }
-        });
+        el.text(relativeDate);
+      });
+
+      loadPinboardData(renderPinboardTemplate);
+
+      refreshCount = 0;
+      loadLastfmData(renderLastfmTemplate);
     });
 
+  })();
 </script>
 
 <script type="text/javascript">
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-42018114-1']);
-    _gaq.push(['_trackPageview']);
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-42018114-1']);
+  _gaq.push(['_trackPageview']);
 
-    (function() {
-        var ga = document.createElement('script');
-        ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0];
-        s.parentNode.insertBefore(ga, s);
-    })();
+  (function() {
+    var ga = document.createElement('script');
+    var s = document.getElementsByTagName('script')[0];
+    ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(ga, s);
+  })();
 </script>
 </body>
 </html>
