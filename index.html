@@ -141,6 +141,9 @@ layout: nolayout
               }, refreshInterval);
             }
           }
+        },
+        error: function () {
+          $('#lastfmItems').html('<p>the data service is unavailable at this time</p>');
         }
       });
     }
@@ -154,6 +157,9 @@ layout: nolayout
           var shortData = parsedData.slice(0, 5);
 
           $('#pinboardItems').html(template(shortData));
+        },
+        error: function () {
+          $('#pinboardItems').html('<p>the data service is unavailable at this time</p>');
         }
       });
     }
