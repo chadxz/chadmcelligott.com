@@ -8,10 +8,8 @@ I need to move from deploying via s3_website to using the grunt task [grunt-aws-
 
 This site uses Jekyll to build the static assets, and s3_website to publish to Amazon S3. Both of these tools require the Ruby programming language runtime to be installed, so if you need to install that:
 - for windows, use [RubyInstaller][]
-- for mac/linux, use [RVM][] by executing this at the command line:
-```shell
-\curl -L https://get.rvm.io | bash -s stable --ruby
-```
+- for mac/linux, use [RVM][] by executing this at the command line: `\curl -L https://get.rvm.io | bash -s stable --ruby`
+
 Once ruby is installed, install s3_website and jekyll by running:
 ```shell
 bundle install
