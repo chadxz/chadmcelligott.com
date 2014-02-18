@@ -2,3 +2,4 @@
 _site
 _bower_components
 .idea
+.bundle

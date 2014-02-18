@@ -1,2 +1,4 @@
+s3_id: <%= ENV['PERSONAL_AWS_ACCESS_KEY_ID'] %>
+s3_secret: <%= ENV['PERSONAL_AWS_SECRET_ACCESS_KEY'] %>
 s3_bucket: chadmcelligott.com
 gzip: true
