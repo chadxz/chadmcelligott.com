@@ -29,8 +29,8 @@ jekyll serve --watch
 ###Deploy
 
 The deployment requires two environment variables to be set to your amazon settings in order to properly deploy:
-- `AWS_ACCESS_KEY_ID`
-- `AWS_SECRET_ACCESS_KEY`
+- `PERSONAL_AWS_ACCESS_KEY_ID`
+- `PERSONAL_AWS_SECRET_ACCESS_KEY`
 
 Once those are set:
 ```shell
