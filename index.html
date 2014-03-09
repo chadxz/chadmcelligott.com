@@ -152,9 +152,7 @@ layout: nolayout
         type: 'GET',
         url: 'http://immense-refuge-7911.herokuapp.com/pinboard?limit=5',
         success: function (data) {
-          var parsedData = JSON.parse(data);
-
-          $('#pinboardItems').html(template(shortData));
+          $('#pinboardItems').html(template(data));
         },
         error: function () {
           $('#pinboardItems').html('<p>the data service is unavailable at this time</p>');
