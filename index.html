@@ -150,10 +150,9 @@ layout: nolayout
     function loadPinboardData(template) {
       $.ajax({
         type: 'GET',
-        url: 'http://immense-refuge-7911.herokuapp.com/pinboard',
+        url: 'http://immense-refuge-7911.herokuapp.com/pinboard?limit=5',
         success: function (data) {
           var parsedData = JSON.parse(data);
-          var shortData = parsedData.slice(0, 5);
 
           $('#pinboardItems').html(template(shortData));
         },
