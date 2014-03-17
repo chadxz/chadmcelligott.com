@@ -115,17 +115,15 @@ layout: nolayout
     function loadLastfmData(template) {
       $.ajax({
         type: 'GET',
-        url: 'http://immense-refuge-7911.herokuapp.com/lastfm',
+        url: 'http://immense-refuge-7911.herokuapp.com/lastfm?limit=5',
         success: function (data) {
-          var parsedData = JSON.parse(data),
-              tracks = parsedData.recenttracks.track.slice(0,5),
-              refreshInterval = 30000;
+          var refreshInterval = 30000;
 
-          $('#lastfmItems').html(template(tracks));
+          $('#lastfmItems').html(template(data));
 
           // if currently listening to music, periodically refresh this data.
           // stop refreshing if no longer 'now playing' for more than 1m30s
-          if (tracks[0]['@attr'] && tracks[0]['@attr'].nowplaying) {
+          if (data[0]['@attr'] && data[0]['@attr'].nowplaying) {
             refreshCount = 0;
 
             setTimeout(function () {
